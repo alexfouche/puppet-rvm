@@ -38,3 +38,5 @@ export rvm_gemset_create_on_use_flag=<%= @gemset_create_on_use_flag ? 1 : 0 %>
 
 # I had to comment this because it prevents new rubies to be properly compiled and installed by RVM
 # export rvm_ignore_gemsets_flag=<%= @ignore_gemsets_flag ? 1 : 0 %>
+
+export rvm_silence_path_mismatch_check_flag=<%= @rvm_silence_path_mismatch_check_flag ? 1 : 0 %>

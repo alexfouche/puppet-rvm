@@ -7,10 +7,11 @@ class rvm::rvmrc(
   $autoupdate_flag = false,
   $silence_path_mismatch_check_flag = undef,
   $project_rvmrc = false,
-  $gem_options = "--no-document",
+  $gem_options = '--no-document',
   $install_on_use_flag = false,
   $gemset_create_on_use_flag = false,
   $ignore_gemsets_flag = false,
+  $rvm_silence_path_mismatch_check_flag = true,
   ) inherits rvm::params {
 
   if $manage_group { include rvm::group }
@@ -23,6 +24,7 @@ class rvm::rvmrc(
   validate_bool( $install_on_use_flag )
   validate_bool( $gemset_create_on_use_flag )
   validate_bool( $ignore_gemsets_flag )
+  validate_bool( $rvm_silence_path_mismatch_check_flag )
 
   file { '/etc/rvmrc':
     content => template($template),
